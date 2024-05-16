@@ -5,12 +5,12 @@ function Post({ id }) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-        .then((response) => response.json())
-        .then((data) => {
-            setPost(data.body);
-            setLoading(false);
-        });
+        fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+            .then((response) => response.json())
+            .then((data) => {
+                setPost(data.body);
+                setLoading(false);
+            });
     }, [id]);
 
     if (loading) {
